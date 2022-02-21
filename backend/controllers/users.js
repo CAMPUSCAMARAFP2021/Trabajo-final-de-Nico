@@ -1,7 +1,7 @@
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 
-
+a
 const encriptarPassword = (pass) => {
     return pass;
 }
