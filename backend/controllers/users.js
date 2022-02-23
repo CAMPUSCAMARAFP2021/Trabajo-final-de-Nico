@@ -1,54 +1,27 @@
 const User = require('../models/User');
-const jwt = require('jsonwebtoken');
 
 
-const encriptarPassword = (pass) => {
-    return pass;
+const createUser = async(user) => {
+
+    user.password = encriptarPassword('hola mundo');
+    return await User.create(user);
 }
 
-const buildJWT = (author) => {
-    const time = 1212;
-    
-    return jwt.sign({
-        time,
-        author
-    }, 'secreto');
-} 
-
-
-const login = async (name,password) => {
-    const author = await Author.findOne({name});
-    // if(!author) throw new Error('usuario no encontrado');
-    // console.log('=============>', author)
-    // const passwordEncriptada = encriptarPassword(password);
-    return buildJWT(author);
-    // if (passwordEncriptada == author.password) return buildJWT(author);
-    // else throw new Error('la passord es incorrecta');
+const getUsers = async() => {
+    return await User.find();
 }
 
-const createAuthor = async(author) => {
-
-    author.password = encriptarPassword('hola mundo');
-    return await Author.create(author);
+const getUser = async(userId) => {
+    return await User.findById(userId);
 }
 
-const getAuthors = async() => {
-    return await Author.find();
-}
-
-const getAuthor = async(authorId) => {
-    return await Author.findById(authorId);
-}
-
-const deleteAuthor = async(authorId)=> {
-    const task = await Task.findByIdAndDelete(authorId);
-    return false;
+const deleteUser = async(userId)=> {
+    return await Task.findByIdAndDelete(userId);
 }
 
 module.exports = {
-    login,
-    createAuthor,
-    getAuthors,
-    getAuthor,
-    deleteAuthor,
+    createUser,
+    getUsers,
+    getUser,
+    deleteUser,
 };
