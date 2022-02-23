@@ -2,7 +2,6 @@ const User = require('../models/User');
 
 
 const createUser = async(user) => {
-
     user.password = encriptarPassword('hola mundo');
     return await User.create(user);
 }
