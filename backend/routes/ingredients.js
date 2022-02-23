@@ -1,4 +1,4 @@
-var router = express.Router();
+var router = require('express').Router();
 var ingredientsController = require('../controllers/ingredients');
 
 
