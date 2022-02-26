@@ -1,5 +1,4 @@
 const Recipe = require('../models/Recipe');
-const jwt = require('jsonwebtoken');
 
 
 const createRecipe = async(recipe) => {

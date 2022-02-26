@@ -2,25 +2,17 @@ const {model, Schema} = require('mongoose');
 
 const schema = new Schema({
     title:  String,
-    description: String,
     duration: Number,
     amount: Number,
-    ingredients: [{
-      type: Schema.Types.ObjectId,
-      ref: 'Ingredients'
-    }],
-    allergens: [{
-      type: Schema.Types.ObjectId,
-      ref: 'Allergens'
-    }],
     difficulty: {
       type: Schema.Types.ObjectId,
       ref: 'Difficulty'
     },
-    cookware: [{
+    user: {
       type: Schema.Types.ObjectId,
-      ref: 'Cookware'
-      }],
+      ref: 'User'
+    },
+    description: String
   }); 
 const Recipe = model('Recipe', schema);
 
