@@ -1,6 +1,11 @@
 var router = require('express').Router();
 var usersController = require('../controllers/users');
 
+router.post('/login',async(req, res) => {
+    const {user} = req.body;
+    const result = await usersController.login(user.email, user.password)
+    res.json(result);
+})
 
 router.post('/',async(req, res) => {
     const {user} = req.body;

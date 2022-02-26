@@ -4,7 +4,8 @@ var recipesController = require('../controllers/recipes');
 
 router.post('/',async(req, res) => {
     const {recipe} = req.body;
-    const result =  await recipesController.createRecipe(recipe);
+    recipe.user = req.user._id;
+    const result =  await recipesController.createRecipe(recipe,req.user);
     res.json(result);
 });
 

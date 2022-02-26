@@ -13,6 +13,7 @@ var difficultiesRouter = require('./routes/difficulties');
 var ingredientsRouter = require('./routes/ingredients');
 var recipesRouter = require('./routes/recipes');
 var usersRouter = require('./routes/users');
+var authorization = require('./middleware/authorization');
 
 var app = express();
 
@@ -33,7 +34,7 @@ app.use('/allergens', allergensRouter);
 app.use('/cookwares', cookwaresRouter);
 app.use('/difficulties', difficultiesRouter);
 app.use('/ingredients', ingredientsRouter);
-app.use('/recipes', recipesRouter);
+app.use('/recipes',authorization, recipesRouter);
 app.use('/users', usersRouter)
 
 // catch 404 and forward to error handler

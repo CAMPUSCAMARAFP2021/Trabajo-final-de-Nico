@@ -1,4 +1,30 @@
 const User = require('../models/User');
+const jwt = require('jsonwebtoken');
+
+const addRecipeToUser = async(recipe, user)=>{
+    return await User.findByIdAndUpdate(user._id,{
+        $push:{recipes:recipe._id}
+    })
+}
+
+const buildJWT=(user)=>{
+    const time= Date.now();
+
+    return jwt.sign({
+        time,
+        user
+    },'plastico');
+}
+
+const login = async(email,password) =>{
+    const validuser= await User.findOne({email});
+    if(!validuser)throw new Error("Usuario no encontrado");
+    if(password == validuser.password){
+        return buildJWT(validuser);
+    } else {
+        throw new Error("Contraseña no valida");
+    }
+}
 
 const createUser = async(user) => {
     return await User.create(user);
@@ -21,4 +47,6 @@ module.exports = {
     getUsers,
     getUser,
     deleteUser,
+    login,
+    addRecipeToUser,
 };
