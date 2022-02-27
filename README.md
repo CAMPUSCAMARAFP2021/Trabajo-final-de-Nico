@@ -36,7 +36,7 @@ Nicolás Bustos - Trabajo Inicial - nbustos21
 
 
 ## Agradecimientos 🎁 
-Ángel Beltrán - Apoyo en backend - [abeja21](#https://github.com/abeja21) 
-Sergio lorente - Apoyo en frontend - [slorentemontoro](#https://github.com/slorentemontoro)
-Antonio Castillo - Apoyo moral - [antoniooo266](#https://github.com/antoniooo266)
+* Ángel Beltrán - Apoyo en backend - [abeja21](#https://github.com/abeja21) 
+* Sergio lorente - Apoyo en frontend - [slorentemontoro](#https://github.com/slorentemontoro)
+* Antonio Castillo - Apoyo moral - [antoniooo266](#https://github.com/antoniooo266)
 
