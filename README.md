@@ -7,11 +7,9 @@ Proyecto por Nicolás Bustos Astorga
 
 
 ## Comenzando 🚀
-Para poder usar este proyecto lo primero de todo es descargarse el proyecto.
-
-Para poder usarlo se necesita tener docker instalado y ubuntu en el ordenador
-
-Desopes dentro del visual abrir una terminar y ejecutar el siguiente comando para que pueda funcionar: docker compose up
+* Para poder usar este proyecto lo primero de todo es descargarse el proyecto.
+* Para poder usarlo se necesita tener docker instalado y ubuntu en el ordenador
+* Despues dentro de Visual Studio Code abrir una terminal y ejecutar el siguiente comando para que pueda funcionar: docker compose up
 
 
 ## Build 🛠️
@@ -32,7 +30,7 @@ El proyecto contiene los siguiente ficheros:
 * Conectar wsl al Visual Studio Code
 
 ## Autor ✒️
-Nicolás Bustos - Trabajo Inicial - nbustos21
+* Nicolás Bustos - Trabajo Inicial - nbustos21
 
 
 ## Agradecimientos 🎁 
