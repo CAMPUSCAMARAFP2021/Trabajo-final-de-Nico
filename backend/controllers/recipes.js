@@ -1,9 +1,11 @@
+const Difficulty = require('../models/Difficulty');
 const Recipe = require('../models/Recipe');
 const userController = require('./users')
 
 const createRecipe = async(recipe,user) => {
     const newRecipe = await Recipe.create(recipe);
     const addRecipeToUser = await userController.addRecipeToUser(newRecipe,user);
+
 }
 
 const getRecipes = async() => {

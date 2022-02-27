@@ -1,7 +1,6 @@
 var router = require('express').Router();
 var recipesController = require('../controllers/recipes');
 
-
 router.post('/',async(req, res) => {
     const {recipe} = req.body;
     recipe.user = req.user._id;

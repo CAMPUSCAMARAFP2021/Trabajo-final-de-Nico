@@ -22,4 +22,5 @@ module.exports = {
     getDifficulties,
     getDifficulty,
     deleteDifficulty,
+    addDifficultyToRecipe,
 };
