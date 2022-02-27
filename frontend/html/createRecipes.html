@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/LogoPestaña-removebg-preview.png" type="image/x-icon">
+    <title>NicoRecetas</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/footers/">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/headers/">
+
+    
+    <!-- Bootstrap core CSS -->
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    <link href="../css/headers.css" rel="stylesheet">
+    <link href="../css/createRecipes.css" rel="stylesheet">
+
+    
+</head>
+<body>
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <img class="logo" src="../img/LogoNicoRecetas-removebg-preview.png">
+          </a>
+    
+          <ul class="nav nav-pills">
+            <li class="nav-item"><a href="createRecipes.html" class="nav-link active" aria-current="page">Crear</a></li>
+            <li class="nav-item"><a href="seeRecipes.html" class="nav-link">Recetas</a></li>
+            <li class="nav-item"><a href="login.html" class="nav-link">Log in</a></li>
+            <li class="nav-item"><a href="signin.html" class="nav-link">Sign in</a></li>
+          </ul>
+        </header>
+      </div>
+
+      <div class="container">  
+        <form id="contact" action="" method="post">
+          <h3>¡Hora de crear tu receta!</h3>
+          <fieldset>
+            <input placeholder="Nombre de la receta" type="text" tabindex="1" required autofocus>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Duracion (en minutos)" type="number" minlength="0" tabindex="2" required>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Raciones" type="number" minlength="0" tabindex="3" required>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Dificultad" type="text" tabindex="4" required>
+          </fieldset>
+          <fieldset>
+            <textarea placeholder="Descripción de la receta" tabindex="5" required></textarea>
+          </fieldset>
+          <fieldset>
+            <a name="submit" href="seeRecipes.html" type="button" id="contact-submit">Crear</a>
+          </fieldset>
+        </form>
+      </div>
+</body>
+</html>

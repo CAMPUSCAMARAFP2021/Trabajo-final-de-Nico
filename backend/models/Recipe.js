@@ -4,11 +4,12 @@ const schema = new Schema({
     title:  String,
     duration: Number,
     amount: Number,
+    description: String,
+    difficulty: String,
     user: {
       type: Schema.Types.ObjectId,
       ref: 'User'
     },
-    description: String
   }); 
 const Recipe = model('Recipe', schema);
 
