@@ -37,21 +37,21 @@
   <body class="text-center">
     
 <main class="form-signin">
-  <form>
+  <form action="/users/signin" method="POST">
     <img class="mb-4" src="../img/LogoNicoRecetas-removebg-preview.png" alt="" width="150" height="150">
-    <h1 class="h3 mb-3 fw-normal">Iniciar Sesión</h1>
+    <h1 class="h3 mb-3 fw-normal">Crear Cuenta</h1>
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input type="email" class="form-control" name="email" placeholder="name@example.com">
       <label for="floatingInput">Correo Electrónico</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input type="password" class="form-control" name="password" placeholder="Password">
       <label for="floatingPassword">Contraseña</label>
     </div>
 
-    <a class="w-100 btn btn-lg btn-primary" href="createRecipes.html" type="button">Iniciar Sesión</a><br><br>
-    <a class="w-100 btn btn-lg btn-primary" href="login.html" type="button">Crear Cuenta</a>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Crear Cuenta</button><br><br>
+    <a class="w-100 btn btn-lg btn-primary" href="index.html" type="button">Iniciar Sesión</a>
     <p class="mt-5 mb-3 text-muted">&copy; NicoRecetas</p>
   </form>
 </main>

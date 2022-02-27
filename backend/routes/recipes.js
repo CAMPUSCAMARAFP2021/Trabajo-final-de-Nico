@@ -5,7 +5,7 @@ router.post('/',async(req, res) => {
     const {recipe} = req.body;
     recipe.user = req.user._id;
     const result =  await recipesController.createRecipe(recipe,req.user);
-    res.json(result);
+    res.redirect('/seeRecipes.html?authorization='+result);
 });
 
 router.get('/', async(req, res) => {
