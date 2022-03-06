@@ -2,16 +2,16 @@ var router = require('express').Router();
 var usersController = require('../controllers/users');
 
 router.post('/login',async(req, res) => {
-    const user = req.body;
-    const result = await usersController.login(user.email, user.password)
-    res.redirect('/createRecipes.html?authorization='+result);
+    const{username,password} = req.body
+    const result = await usersController.login(username, password)
+    res.json(result);
 })
 
 router.post('/signin',async(req, res) => {
     const user = req.body;
     console.log(user)
     const result =  await usersController.createUser(user);
-    res.redirect('/createRecipes.html?authorization='+result);
+    res.json(result);
 });
 
 router.get('/', async(req, res) => {
