@@ -11,7 +11,7 @@ const RecipeList = ({jwt}) => {
 
     const doCreateRecipe = (recipe) => {
         setIsLoading(true);
-        createRecipes(recipe)
+        createRecipes(recipe, jwt)
             .then((newRecipe) => {
                  setRecipes((prevState) => [...prevState, newRecipe]);
                  setIsLoading(false);       
@@ -21,16 +21,16 @@ const RecipeList = ({jwt}) => {
 
     const doDeleteRecipe = (recipe) => {
        setIsLoading(true);
-       deleteRecipes(recipe)
+       deleteRecipes(recipe,jwt)
        .then(loadData);
-       setIsLoading(false)
    };
 
     const loadData = () => {
         setIsLoading(true);
-        getRecipes(jwt).then((recipes) => {    
+        getRecipes(jwt).then((recipes) => {   
+            console.log('llego aqui?')
+            setIsLoading(false) 
             setRecipes(recipes);
-            setIsLoading(false)
         }).catch(() => setIsLoading(false));
     }
     useEffect(loadData,[]); 

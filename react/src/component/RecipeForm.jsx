@@ -9,7 +9,7 @@ const RecipeForm = ({createRecipe}) => {
             "duration": "",
             "amount": "",
             "description": "",
-            "difficulty": ""
+            "difficulty": "",
         }
     );
 
@@ -61,9 +61,6 @@ const RecipeForm = ({createRecipe}) => {
         </form>
         <br></br>
         <Button name="enviar" onClick={() => createRecipe(recipe)}></Button>
-        <div>
-            {JSON.stringify(recipe)}
-        </div>
         <br></br>
     </>;
 }

@@ -3,9 +3,9 @@ var recipesController = require('../controllers/recipes');
 
 router.post('/',async(req, res) => {
     const {recipe} = req.body;
-    recipe.user = req.user._id;
+    recipe.user = req.user;
     const result =  await recipesController.createRecipe(recipe,req.user);
-    res.redirect('/seeRecipes.html?authorization='+result);
+    res.json(result);
 });
 
 router.get('/', async(req, res) => {

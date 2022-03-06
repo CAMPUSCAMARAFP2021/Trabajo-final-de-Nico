@@ -1,6 +1,6 @@
 const getRecipes = async (jwt) => {
     const headers = new Headers();
-    headers.append("Authorization", jwt);
+    headers.append("authorization", jwt);
     return fetch("http://localhost:3000/recipes", {headers})
     .then(res => res.json())
 }
@@ -8,7 +8,7 @@ const getRecipes = async (jwt) => {
 const createRecipes = async (recipe, jwt) => {
     const headers = new Headers();
     headers.append("Content-Type", "application/json");
-    headers.append("Authorization", jwt);
+    headers.append("authorization", jwt);
     const body = JSON.stringify({recipe});
     const requestOptions = {
         method: 'POST', headers, body,redirect: 'follow'
