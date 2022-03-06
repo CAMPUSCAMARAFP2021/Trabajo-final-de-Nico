@@ -16,8 +16,8 @@ const buildJWT=(user)=>{
     },'plastico');
 }
 
-const login = async(email,password) =>{
-    const validuser= await User.findOne({email});
+const login = async(username,password) =>{
+    const validuser= await User.findOne({username});
     if(!validuser)throw new Error("Usuario no encontrado");
     if(password == validuser.password){
         return buildJWT(validuser);
@@ -27,7 +27,15 @@ const login = async(email,password) =>{
 }
 
 const createUser = async(user) => {
-    return await User.create(user);
+   
+    const{username}=user
+    const controllUser=await User.find({username})
+        if(controllUser=="") {
+            const newUser= await User.create(user);
+            return buildJWT(newUser)}
+        else {
+            throw  new Error("El usuario ya existe")
+    }
 }
 
 const getUsers = async() => {

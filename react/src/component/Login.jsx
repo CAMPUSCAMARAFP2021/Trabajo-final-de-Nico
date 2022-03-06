@@ -8,9 +8,25 @@ const Login = ({onLoginClick}) => {
     const inputPasswordHandler = ({target}) => setPassword(target.value);
 
     return <>
-        <input type="text" name={username} onChange={inputUserHandler}></input>
-        <input type="password" name={password} onChange={inputPasswordHandler}></input>
-        <button onClick={() => onLoginClick(username,password)}>Login</button>
+        <body class="text-center">
+    <main class="form-signin">
+    
+  
+        <h1 class="h3 mb-3 fw-normal">LogIn</h1>
+        <div class="form-floating">
+        <input type="text"class="form-control"id="username" name={username} onChange={inputUserHandler}></input><br/>
+        <label for="username">Nombre de usuario</label>
+        </div>
+        <div class="form-floating">
+        <input type="password" class="form-control" id="password" name={password} onChange={inputPasswordHandler}></input><br/>
+        <label for="password">Contraseña</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" onClick={() => onLoginClick(username,password)}>Login</button><br/><br/>
+        
+       
+        </main>
+        
+        </body>
     </>
 }
 

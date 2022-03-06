@@ -9,7 +9,8 @@ router.post('/',async(req, res) => {
 });
 
 router.get('/', async(req, res) => {
-    const recipes = await recipesController.getRecipes();
+    
+    const recipes = await recipesController.getRecipes(req);
     res.json(recipes);
 })
 

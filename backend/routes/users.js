@@ -3,13 +3,13 @@ var usersController = require('../controllers/users');
 
 router.post('/login',async(req, res) => {
     const{username,password} = req.body
+    console.log(username,password)
     const result = await usersController.login(username, password)
     res.json(result);
 })
 
-router.post('/signin',async(req, res) => {
-    const user = req.body;
-    console.log(user)
+router.post('/',async(req, res) => {
+    const {user} = req.body;
     const result =  await usersController.createUser(user);
     res.json(result);
 });

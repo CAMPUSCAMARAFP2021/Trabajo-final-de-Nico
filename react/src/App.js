@@ -4,7 +4,7 @@ import RecipeList from './component/RecipeList';
 import Container from 'react-bootstrap/Container';
 import Login from './component/Login';
 import Register from './component/Register';
-import { login } from './api/users';
+import { login,register } from './api/users';
 import { useState } from 'react';
 import LogOutButton from './component/LogOutButton';
 const App = () =>{
@@ -15,6 +15,11 @@ const App = () =>{
      .then((jwt)=> setJwt(jwt))
      .catch((error) => console.log('falla'))
   }
+  const onRegisterClick=(username,password)=>{
+    register(username,password)
+    .then((jwt)=> setJwt(jwt))
+    .catch((error) => console.log('error en el registro'))
+  }
    
   return <Container className="p-3">
      <Container className="p-5 mb-4 bg-light rounded-3">
@@ -23,7 +28,11 @@ const App = () =>{
          <LogOutButton onLogOut={() => setJwt(false)}></LogOutButton>
          <RecipeList jwt={jwt} />
        </> : 
-       <Login onLoginClick={onLoginClick}/>}
+       <>
+       <Login onLoginClick={onLoginClick}/>
+       <Register onRegisterClick={onRegisterClick}/>
+       </>
+      }
      </Container>
    </Container> 
  }

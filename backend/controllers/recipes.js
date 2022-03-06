@@ -8,8 +8,8 @@ const createRecipe = async(recipe,user) => {
     return newRecipe;
 }
 
-const getRecipes = async() => {
-    return await Recipe.find();
+const getRecipes = async({user}) => {
+    return await Recipe.find({user});
 }
 
 const getRecipe = async(recipeId) => {
